@@ -91,7 +91,7 @@ extension ManufacturerVM {
     private func _handleSucceed(
         with resTuple: (res: ServerManufacturerModelRes, pageNumber: Int)
     ) {
-        let hasMorePages = resTuple.res.totalPageCount > resTuple.pageNumber
+        let hasMorePages = resTuple.res.totalPageCount - 1 > resTuple.pageNumber
         let resItems: [ServerManufacturerModelRes.ManufacturerInfoModel]
         if resTuple.pageNumber == .zero { // should reset datas
             resItems = resTuple.res.manufacturerInfo.models

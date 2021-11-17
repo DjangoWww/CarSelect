@@ -15,9 +15,14 @@ import MJRefresh
 
 /// ManufacturerVC
 public final class ManufacturerVC: UIViewController {
+    deinit {
+        printDebug("ManufacturerVC deinit")
+    }
+
     @IBOutlet private weak var _pageSizeLabel: UILabel!
     @IBOutlet private weak var _slider: UISlider!
     @IBOutlet private weak var _tableView: UITableView!
+
     private let _viewModel = ManufacturerVM()
     private let _disposeBag = DisposeBag()
 }
@@ -121,11 +126,13 @@ extension ManufacturerVC {
                 _tableView.mj_footer?.endRefreshingWithNoMoreData()
             }
             _tableView.hideToast()
+            view.hideToast()
         case .failedWith(let err):
             _tableView.mj_header?.endRefreshing()
             _tableView.mj_footer?.endRefreshing()
             _tableView.hideToast()
-            _tableView.makeToast(err.errorDescription)
+            view.hideToast()
+            view.makeToast(err.errorDescription)
         }
     }
 
@@ -133,10 +140,28 @@ extension ManufacturerVC {
     private func _pushToMainTypesVC(
         with model: ServerManufacturerModelRes.ManufacturerInfoModel
     ) {
-        let mainTypesVC = MainTypesVC()
+        let mainTypesVC = MainTypesVC().then {
+            $0.accept(model)
+            $0.selectBlock = { [weak self] (mainTypeInfoModel, manufacturerInfoModel) in
+                let cancleAction = AlertActionType(
+                    title: "Sure",
+                    style: .cancel,
+                    handler: nil
+                )
+                self?.showAlertVcWith(
+                    title: "Alert",
+                    message: "You've selected <\(manufacturerInfoModel.manufacturerName)>, <\(mainTypeInfoModel.mainTypeValue)> ",
+                    preferredStyle: .alert,
+                    actions: [cancleAction]
+                )
+            }
+        }
         navigationController?.pushViewController(mainTypesVC, animated: true)
     }
 }
+
+// MARK: - AlertAble extension for ManufacturerVC
+extension ManufacturerVC: AlertAble { }
 
 extension String {
     fileprivate static let _manufacturerTableViewCell = "ManufacturerTableViewCell"

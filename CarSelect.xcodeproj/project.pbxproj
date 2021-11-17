@@ -52,6 +52,9 @@
 		D8383488274420A400C1CB18 /* MainTypesVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8383486274420A400C1CB18 /* MainTypesVC.xib */; };
 		D838348D274420C800C1CB18 /* ManufacturerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D838348B274420C800C1CB18 /* ManufacturerVC.swift */; };
 		D838348E274420C800C1CB18 /* ManufacturerVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = D838348C274420C800C1CB18 /* ManufacturerVC.xib */; };
+		D8806E76274514D400DA9469 /* MainTypesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8806E74274514D400DA9469 /* MainTypesTableViewCell.swift */; };
+		D8806E77274514D400DA9469 /* MainTypesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8806E75274514D400DA9469 /* MainTypesTableViewCell.xib */; };
+		D8806E792745238800DA9469 /* UINavigationController+Pop.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8806E782745238800DA9469 /* UINavigationController+Pop.swift */; };
 		D88D997D27436E7E0075FD91 /* Then.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88D997C27436E7E0075FD91 /* Then.swift */; };
 		D88D997F274372590075FD91 /* Error+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88D997E274372590075FD91 /* Error+Extension.swift */; };
 		D88D9982274373280075FD91 /* Toast.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88D9981274373280075FD91 /* Toast.swift */; };
@@ -128,6 +131,9 @@
 		D8383486274420A400C1CB18 /* MainTypesVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainTypesVC.xib; sourceTree = "<group>"; };
 		D838348B274420C800C1CB18 /* ManufacturerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManufacturerVC.swift; sourceTree = "<group>"; };
 		D838348C274420C800C1CB18 /* ManufacturerVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ManufacturerVC.xib; sourceTree = "<group>"; };
+		D8806E74274514D400DA9469 /* MainTypesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTypesTableViewCell.swift; sourceTree = "<group>"; };
+		D8806E75274514D400DA9469 /* MainTypesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainTypesTableViewCell.xib; sourceTree = "<group>"; };
+		D8806E782745238800DA9469 /* UINavigationController+Pop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Pop.swift"; sourceTree = "<group>"; };
 		D88D997C27436E7E0075FD91 /* Then.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Then.swift; sourceTree = "<group>"; };
 		D88D997E274372590075FD91 /* Error+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Error+Extension.swift"; sourceTree = "<group>"; };
 		D88D9981274373280075FD91 /* Toast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Toast.swift; sourceTree = "<group>"; };
@@ -341,6 +347,7 @@
 			isa = PBXGroup;
 			children = (
 				D820868D27436D0600401F7D /* UIColor+Extension.swift */,
+				D8806E782745238800DA9469 /* UINavigationController+Pop.swift */,
 				D820868F27436D2300401F7D /* UIView+Awakable.swift */,
 				D817BAA82743848D00A9A621 /* UIView+ContainingVC.swift */,
 				D820869127436D3300401F7D /* UIView+Frame.swift */,
@@ -412,6 +419,7 @@
 				D8383485274420A400C1CB18 /* MainTypesVC.swift */,
 				D8383486274420A400C1CB18 /* MainTypesVC.xib */,
 				D83834832744208800C1CB18 /* MainTypesVM.swift */,
+				D8806E73274514B800DA9469 /* Views */,
 			);
 			path = MainTypes;
 			sourceTree = "<group>";
@@ -426,6 +434,15 @@
 				D838346727441AD100C1CB18 /* ServerTrusManager.swift */,
 			);
 			path = ServerProvider;
+			sourceTree = "<group>";
+		};
+		D8806E73274514B800DA9469 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D8806E74274514D400DA9469 /* MainTypesTableViewCell.swift */,
+				D8806E75274514D400DA9469 /* MainTypesTableViewCell.xib */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		D88D997B27436E620075FD91 /* Then */ = {
@@ -597,6 +614,7 @@
 				D8383488274420A400C1CB18 /* MainTypesVC.xib in Resources */,
 				D838348E274420C800C1CB18 /* ManufacturerVC.xib in Resources */,
 				7549F1572742A26900E3013D /* LaunchScreen.storyboard in Resources */,
+				D8806E77274514D400DA9469 /* MainTypesTableViewCell.xib in Resources */,
 				7549F1542742A26900E3013D /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -675,6 +693,7 @@
 				D838346A27441AD100C1CB18 /* ServerModelTypeRes.swift in Sources */,
 				D820869227436D3300401F7D /* UIView+Frame.swift in Sources */,
 				D817BAA92743848D00A9A621 /* UIView+ContainingVC.swift in Sources */,
+				D8806E792745238800DA9469 /* UINavigationController+Pop.swift in Sources */,
 				D817BAA127437E2800A9A621 /* WindowManager.swift in Sources */,
 				D838347927441C0F00C1CB18 /* NetWorksLoggerPlugin.swift in Sources */,
 				D83834652744196D00C1CB18 /* ServerMainTypesModelRes.swift in Sources */,
@@ -688,6 +707,7 @@
 				D820869627436D4F00401F7D /* UIView+IB.swift in Sources */,
 				D88D997D27436E7E0075FD91 /* Then.swift in Sources */,
 				D88D997F274372590075FD91 /* Error+Extension.swift in Sources */,
+				D8806E76274514D400DA9469 /* MainTypesTableViewCell.swift in Sources */,
 				D83834802744207500C1CB18 /* ManufacturerVM.swift in Sources */,
 				D838346B27441AD100C1CB18 /* ServerTrusManager.swift in Sources */,
 				D820869827436D5A00401F7D /* UIView+Rotate.swift in Sources */,

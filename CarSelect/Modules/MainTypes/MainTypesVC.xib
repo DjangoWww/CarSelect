@@ -11,6 +11,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainTypesVC" customModule="CarSelect" customModuleProvider="target">
             <connections>
+                <outlet property="_pageSizeLabel" destination="ybH-CS-faI" id="ppU-EQ-vfh"/>
+                <outlet property="_slider" destination="LeL-cf-fhj" id="0wC-Ff-E4b"/>
+                <outlet property="_tableView" destination="jFt-Ky-uK0" id="fO3-dU-i3y"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -18,14 +21,58 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="pageSize:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ybH-CS-faI">
+                    <rect key="frame" x="20" y="54" width="100" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="100" id="pfX-XV-KNJ"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="PingFangSC-Regular" family="PingFang SC" pointSize="14"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.15000000596046448" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="LeL-cf-fhj">
+                    <rect key="frame" x="128" y="54" width="268" height="31"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="82G-YQ-DqZ"/>
+                    </constraints>
+                    <color key="minimumTrackTintColor" systemColor="linkColor"/>
+                    <color key="maximumTrackTintColor" systemColor="systemOrangeColor"/>
+                    <color key="thumbTintColor" systemColor="systemYellowColor"/>
+                </slider>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" estimatedRowHeight="44" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="jFt-Ky-uK0">
+                    <rect key="frame" x="0.0" y="94" width="414" height="768"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </tableView>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-            <point key="canvasLocation" x="139" y="40"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="LeL-cf-fhj" secondAttribute="trailing" constant="20" id="4xA-6q-nfU"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="jFt-Ky-uK0" secondAttribute="trailing" id="BVA-r9-XS4"/>
+                <constraint firstItem="LeL-cf-fhj" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="EqG-Wf-3NM"/>
+                <constraint firstItem="LeL-cf-fhj" firstAttribute="leading" secondItem="ybH-CS-faI" secondAttribute="trailing" constant="10" id="JsT-7J-nBl"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="jFt-Ky-uK0" secondAttribute="bottom" id="QcH-1s-I97"/>
+                <constraint firstItem="jFt-Ky-uK0" firstAttribute="top" secondItem="ybH-CS-faI" secondAttribute="bottom" constant="10" id="nMy-s7-Kvc"/>
+                <constraint firstItem="ybH-CS-faI" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="rAY-xU-2PU"/>
+                <constraint firstItem="ybH-CS-faI" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="rCA-U8-Cnl"/>
+                <constraint firstItem="jFt-Ky-uK0" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="yfg-lg-xsj"/>
+                <constraint firstItem="jFt-Ky-uK0" firstAttribute="top" secondItem="LeL-cf-fhj" secondAttribute="bottom" constant="10" id="zyl-CL-qR9"/>
+            </constraints>
+            <point key="canvasLocation" x="137.68115942028987" y="39.508928571428569"/>
         </view>
     </objects>
     <resources>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
