@@ -49,7 +49,9 @@ extension MainTypesVC {
 // MARK: - public funcs
 extension MainTypesVC {
     /// use this func to get the model
-    public func accept(_ model: ServerManufacturerModelRes.ManufacturerInfoModel) {
+    public func accept(
+        _ model: ServerManufacturerModelRes.ManufacturerInfoModel
+    ) {
         _viewModel.accept(model)
     }
 }

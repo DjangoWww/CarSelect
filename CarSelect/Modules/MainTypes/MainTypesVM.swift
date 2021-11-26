@@ -42,7 +42,8 @@ public final class MainTypesVM {
         viewStateDriver = _viewStateRelay.asDriver()
         tableSectionsDriver = _tableSectionsRelay.asDriver().skip(1)
         manufacturerInfoDriver = _manufacturerInfoModelRelay
-            .asDriver().filter { $0 != nil }.map { $0! }
+            .asDriver()
+            .compactMap { $0 }
 
         Observable
             .combineLatest(
